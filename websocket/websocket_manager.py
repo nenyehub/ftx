@@ -61,8 +61,6 @@ class WebsocketManager:
             ws.run_forever()
         except Exception as e:
             raise Exception(f'Unexpected error while running websocket: {e}')
-        finally:
-            self._reconnect(ws)
 
     def _reconnect(self, ws):
         assert ws is not None, '_reconnect should only be called with an existing ws'
